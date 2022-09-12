@@ -14,13 +14,6 @@ public class Employee {
         this.salaryEmployee = salaryEmployee;
     }
 
-    @Override
-    public String toString() {
-        return id + ": " + "Ф.И.О: " + fullNameEmployee
-                + " - отдел: " + departmentEmployee
-                + " - зарплата: " + salaryEmployee + ".";
-    }
-
     public String getFullNameEmployee() {
         return fullNameEmployee;
     }
@@ -30,10 +23,7 @@ public class Employee {
     }
 
     public void setDepartmentEmployee(int departmentEmployee) {
-        if (departmentEmployee <= 0 || departmentEmployee > 5) {
-            System.out.println("Не существует такого отдела: " + departmentEmployee);
-            return;
-        }
+        if (departmentEmployee <= 0 || departmentEmployee > 5) throw new RuntimeException("Не существует такого отдела!");
         this.departmentEmployee = departmentEmployee;
     }
 
@@ -48,5 +38,13 @@ public class Employee {
     public int getId() {
         return id;
     }
+
+    @Override
+    public String toString() {
+        return "ID " + id + ": " + "Ф.И.О: " + fullNameEmployee
+                + " - отдел: " + departmentEmployee
+                + " - зарплата: " + salaryEmployee + ".";
+    }
+
 
 }
