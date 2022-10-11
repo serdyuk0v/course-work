@@ -1,8 +1,8 @@
 public class Employee {
-    private String fullNameEmployee;
+    private final String fullNameEmployee;
     private int departmentEmployee;
     private double salaryEmployee;
-    private int id;
+    private final int id;
     private static int idCount;
 
 
